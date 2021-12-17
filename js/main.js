@@ -30,11 +30,13 @@ function addCoffee(name, roast) {
 function displayCoffee() {
     var html = '';
     coffeeList.forEach(function(coffee){
-        html += coffee.name + "\n";
+        html += coffee.name + "\n" + coffee.roast +"\n";
     });
     return html;
 }
+var htmlList = document.getElementById('coffees-object');
+htmlList.innerText = displayCoffee();
 
+htmlList.style.color = '#0000ff';
 
-document.getElementById('coffees-object').innerText = displayCoffee();
 
