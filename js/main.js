@@ -1,5 +1,6 @@
 'use strict'
 
+
 var coffeeList = [
     {name: 'Light City', roast: 'Light'},
     {name: 'Half City', roast: 'Light'},
@@ -17,16 +18,7 @@ var coffeeList = [
     {name: 'French', roast: 'Dark'}
 ]
 
-function addCoffee(name, roast) {
-    var coffee = [
-        {
-            name: name,
-            roast: roast
 
-        }
-    ]
-    coffeeList.push(coffee);
-}
 function displayCoffee() {
     var html = '';
     coffeeList.forEach(function(coffee){
@@ -34,9 +26,21 @@ function displayCoffee() {
     });
     return html;
 }
+
+//the following code allows the user to search for specific coffee:
+var searchBar = document.getElementById('searchBar');
+
+searchBar.addEventListener('keyup', function (e) {
+    console.log(e.target.value);
+});
+
+
 var htmlList = document.getElementById('coffees-object');
 htmlList.innerText = displayCoffee();
 
 htmlList.style.color = '#0000ff';
+
+
+
 
 
