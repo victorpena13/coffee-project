@@ -14,6 +14,7 @@ var coffeeList = [
     {name: 'Italian', roast: 'Dark'},
     {name: 'French', roast: 'Dark'}
 ]
+
 function organizeCoffee(coffee) {
     var html = '<div class="coffee col-md-6">';
     html += '<h1>' + coffee.name + '</h1>';
