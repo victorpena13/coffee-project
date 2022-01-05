@@ -14,7 +14,6 @@ var coffeeList = [
     {name: 'Italian', roast: 'Dark'},
     {name: 'French', roast: 'Dark'}
 ]
-//this is a test
 function organizeCoffee(coffee) {
     var html = '<div class="coffee col-md-6">';
     html += '<h1>' + coffee.name + '</h1>';
@@ -40,7 +39,6 @@ searchBar.addEventListener('keyup',(e) => {
     var matchingData = searchArrayOfObjects(userInput, coffeeList);
     renderCoffees(matchingData);
 });
-
 function searchArrayOfObjects(userInput, arrayList) {
     var filteredData = []
     for(var i = 0; i < arrayList.length; i++) {
