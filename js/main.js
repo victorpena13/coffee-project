@@ -1,6 +1,3 @@
-'use strict'
-
-
 var coffeeList = [
     {name: 'Light City', roast: 'Light'},
     {name: 'Half City', roast: 'Light'},
@@ -18,29 +15,46 @@ var coffeeList = [
     {name: 'French', roast: 'Dark'}
 ]
 
-
-function displayCoffee() {
-    var html = '';
-    coffeeList.forEach(function(coffee){
-        html += coffee.name + "\n" + coffee.roast +"\n";
-    });
+function renderCoffee(coffee) {
+    var html = '<div class="coffee col-md-6">';
+    // html += '<div>' + coffee.id + '</div>';
+    html += '<h1>' + coffee.name + '</h1>';
+    html += '<P class="center-letter">' + coffee.roast + '</P>';
+    html += '</div>';
     return html;
 }
 
-//the following code allows the user to search for specific coffee:
-var searchBar = document.getElementById('searchBar');
+function renderCoffees(coffees) {
+    var table = document.getElementById('display-coffee-here');
+    var html = '';
+    for(var i = 0; i<coffees.length; i++) {
+        html += renderCoffee(coffees[i]);
+    }
+    return table.innerHTML = html;
+}
 
-searchBar.addEventListener('keyup', function (e) {
-    console.log(e.target.value);
+renderCoffees(coffeeList);
+
+var searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('keyup',(e) => {
+    var userInput = e.target.value;
+    console.log(userInput);
+    var matchingData = searchArrayOfObjects(userInput, coffeeList);
+    renderCoffees(matchingData);
 });
 
 
-var htmlList = document.getElementById('coffees-object');
-htmlList.innerText = displayCoffee();
 
-htmlList.style.color = '#0000ff';
+function searchArrayOfObjects(userInput, arrayList) {
+    var filteredData = []
+    for(var i = 0; i < arrayList.length; i++) {
+        userInput = userInput.toLowerCase();
+        var name = arrayList[i].name.toLowerCase()
 
-
-
-
+        if(name.includes(userInput)) {
+            filteredData.push(arrayList[i]);
+        }
+    }
+    return filteredData;
+}
 
