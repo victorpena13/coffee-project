@@ -5,7 +5,7 @@ var coffeeList = [
     {name: 'City', roast: 'Medium'},
     {name: 'American', roast: 'Medium'},
     {name: 'Breakfast', roast: 'Medium'},
-    {name: 'High', roast: 'Dark',},
+    {name: 'High', roast: 'Dark'},
     {name: 'Continental', roast: 'Dark'},
     {name: 'New Orleans', roast: 'Dark'},
     {name: 'European', roast: 'Dark'},
@@ -15,25 +15,23 @@ var coffeeList = [
     {name: 'French', roast: 'Dark'}
 ]
 
-function renderCoffee(coffee) {
+function organizeCoffee(coffee) {
     var html = '<div class="coffee col-md-6">';
-    // html += '<div>' + coffee.id + '</div>';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<P class="center-letter">' + coffee.roast + '</P>';
     html += '</div>';
     return html;
 }
-
-function renderCoffees(coffees) {
+function displayCoffees(coffees) {
     var table = document.getElementById('display-coffee-here');
     var html = '';
     for(var i = 0; i<coffees.length; i++) {
-        html += renderCoffee(coffees[i]);
+        html += organizeCoffee(coffees[i]);
     }
     return table.innerHTML = html;
 }
+displayCoffees(coffeeList);
 
-renderCoffees(coffeeList);
 
 var searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('keyup',(e) => {
@@ -42,8 +40,6 @@ searchBar.addEventListener('keyup',(e) => {
     var matchingData = searchArrayOfObjects(userInput, coffeeList);
     renderCoffees(matchingData);
 });
-
-
 
 function searchArrayOfObjects(userInput, arrayList) {
     var filteredData = []
