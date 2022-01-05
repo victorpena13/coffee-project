@@ -14,7 +14,7 @@ var coffeeList = [
     {name: 'Italian', roast: 'Dark'},
     {name: 'French', roast: 'Dark'}
 ]
-
+//this is a test
 function organizeCoffee(coffee) {
     var html = '<div class="coffee col-md-6">';
     html += '<h1>' + coffee.name + '</h1>';
