@@ -38,7 +38,7 @@ searchBar.addEventListener('keyup',(e) => {
     var userInput = e.target.value;
     console.log(userInput);
     var matchingData = searchArrayOfObjects(userInput, coffeeList);
-    renderCoffees(matchingData);
+    displayCoffees(matchingData);
 });
 function searchArrayOfObjects(userInput, arrayList) {
     var filteredData = []
@@ -51,5 +51,17 @@ function searchArrayOfObjects(userInput, arrayList) {
         }
     }
     return filteredData;
+}
+
+function createCoffee() {
+    var coffee =
+        {
+            name: '',
+            roast:''
+        }
+        coffee.name = document.getElementById('users-coffee-input').value;
+        coffee.roast = document.getElementById('roast-preference').value;
+    coffeeList.push(coffee);
+    displayCoffees(coffeeList);
 }
 

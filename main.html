@@ -24,15 +24,17 @@
             </form>
             <h1>Search by Name:</h1>
             <input id="searchBar" name="searchBar" type="text">
-            <h1>add coffee</h1>
+            <h1>Add Coffee</h1>
             <form>
-                <select id="roast-preference" name="roast_preference">
-                    <option value="light">Light Roast</option>
-                    <option value="espresso">Medium Roast</option>
-                    <option value="dark">Dark Roast</option>
-                </select>
-                <input id="coffee-name-user" type="text" value="">
-                <input type="submit">
+                <label for="roast-preference">Roast</label>
+                    <select id="roast-preference" name="roast_preference">
+                        <option value="light">Light Roast</option>
+                        <option value="espresso">Medium Roast</option>
+                        <option value="dark">Dark Roast</option>
+                    </select>
+                <label for="users-coffee-input">Name</label>
+                <input id="users-coffee-input" name="users-coffee-input" type="text" value="">
+                <button id="add-coffee" type="button" onclick="createCoffee()">Submit</button>
             </form>
         </div>
     </div>
