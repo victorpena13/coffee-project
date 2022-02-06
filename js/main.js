@@ -32,10 +32,19 @@ function displayCoffees(coffees) {
 }
 displayCoffees(coffeeList);
 
+
 function searchByRoastPreference() {
+    var filteredPreference = [];
+
     var roastPreference = document.getElementById('search-by-roast-preference').value;
-    console.log(roastPreference);
+    coffeeList.forEach(function (coffee) {
+        if(coffee.roast.toLowerCase() === roastPreference) {
+            filteredPreference.push(coffee);
+        }
+    });
+    displayCoffees(filteredPreference);
 }
+
 searchCoffeeByRoastPreferenceSubmitBtn = document.getElementById('search-roast-preference');
 searchCoffeeByRoastPreferenceSubmitBtn.addEventListener('click', searchByRoastPreference);
 
