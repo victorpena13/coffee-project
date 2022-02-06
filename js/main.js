@@ -14,6 +14,7 @@ var coffeeList = [
     {name: 'Italian', roast: 'Dark'},
     {name: 'French', roast: 'Dark'}
 ]
+
 function organizeCoffee(coffee) {
     var html = '<div class="coffee col-md-6">';
     html += '<h1>' + coffee.name + '</h1>';
@@ -31,6 +32,12 @@ function displayCoffees(coffees) {
 }
 displayCoffees(coffeeList);
 
+function searchByRoastPreference() {
+    var roastPreference = document.getElementById('search-by-roast-preference').value;
+    console.log(roastPreference);
+}
+searchCoffeeByRoastPreferenceSubmitBtn = document.getElementById('search-roast-preference');
+searchCoffeeByRoastPreferenceSubmitBtn.addEventListener('click', searchByRoastPreference);
 
 var searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('keyup',(e) => {
