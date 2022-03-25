@@ -1,4 +1,4 @@
-# coffee-project-2021
+# coffee-project
 
 Technologies: HTML, CSS, JavaScript.
 
